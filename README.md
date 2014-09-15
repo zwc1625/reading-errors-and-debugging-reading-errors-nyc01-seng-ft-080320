@@ -41,7 +41,7 @@ And you get:
 
 This error happened because you defined total as a string, not as a number, and Ruby doesn't know how to divide a string by a number. It's like telling Ruby to divide the word "lemon" by 7---it has no idea what to do. There are two ways around this error:
 
-1. You could change total into a Float from the start by removing the quotes:
+* Option One: You could change total into a Float from the start by removing the quotes:
 ```ruby
 total = 64.25
 num_of_people = 4
@@ -49,7 +49,7 @@ price_per_person = total / num_of_people
 
 # => 16.0625
 ```
-1. You could change total from a String to a Float in the division step:
+* Option Two: You could change total from a String to a Float in the division step:
 ```ruby
 total = "64.25"
 num_of_people = 4
