@@ -27,7 +27,7 @@ Will result in:
 Here, Ruby is saying that on line 2, there is a missing `end`. Always read the full details of syntax errors and look for line numbers, which usually appear at the beginning of the error message.
 
 ## No Method Errors
-  Let's say you want to calculate the amount that each coworker owes for a lunch order on Seamless. The order came to $64.25 for you and your three coworkers and you all aggreed to split the total evenly so you write:
+  Let's say you want to calculate the amount that each coworker owes for a lunch order on Seamless. The order came to $64.25 for you and your three coworkers and you all agreed to split the total evenly so you write:
 
 ```ruby
 total = "64.25"
