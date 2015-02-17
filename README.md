@@ -63,6 +63,22 @@ price_per_person = total.to_f / num_of_people
 # => 16.0625
 ```
 
+A common error is when you have a nil for a variable when you don't expect it.  This commonly happens when you iterate and one of the elements you pass to a block evaluates to nil and you're calling some method on each element.
+
+```ruby
+person = {:blake => "cool"}
+person2 = {:steven => "not as cool"}
+[person, person2].each do |item|
+     item[:blake].reverse
+end
+```
+
+This will produce the following error
+
+```ruby
+NoMethodError: undefined method `reverse' for nil:NilClass
+```
+
 ## Argument Errors
 
 Argument errors occur when methods are passed too few or too many arguments. For instance, let's say you have a simple method, called `calculate_interest_over_first_year`, which takes the value of a loan and find the amount of interest that accumumlates over the loan's first year given that the annual interest rate is 5.25%:
