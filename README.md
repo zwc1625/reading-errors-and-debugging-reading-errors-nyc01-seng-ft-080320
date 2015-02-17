@@ -118,7 +118,7 @@ Now that you passed the method a value for loan_amount, it will calculate the fi
 
 ## TypeErrors
 
-When you try and do a mathematical operation on two objects of a different type.  For example adding a string and an integer, Ruby will complain.
+When you try and do a mathematical operation on two objects of a different type.  For example if you try and add a string and an integer, Ruby will complain.
 
 ```ruby
 1 + "1"
@@ -128,7 +128,7 @@ Will produce the following error.
 TypeError: String can't be coerced into Fixnum
 ```
 
-Another common typeerror is when you try and index into an array with a variable that doesn't evaluate to an integer.
+Another common TypeError is when you try and index into an array with a variable that doesn't evaluate to an integer.
 
 ```ruby
 index = "hello"
