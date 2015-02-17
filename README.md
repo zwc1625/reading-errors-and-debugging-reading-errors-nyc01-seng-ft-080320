@@ -116,6 +116,33 @@ puts calculate_interest(9400)
 
 Now that you passed the method a value for loan_amount, it will calculate the first year's interest, $493.50.
 
+## TypeErrors
+
+When you try and do a mathematical operation on two objects of a different type.  For example adding a string and an integer, Ruby will complain.
+
+```ruby
+1 + "1"
+```
+Will produce the following error.
+```
+TypeError: String can't be coerced into Fixnum
+```
+
+Another common typeerror is when you try and index into an array with a variable that doesn't evaluate to an integer.
+
+```ruby
+index = "hello"
+array = [1,2,3]
+array[index]
+```
+
+Will produce the following error.
+```ruby
+TypeError: no implicit conversion of String into Integer
+```
+
+Ruby is telling you that it is trying to convert the string you passed as the index to the [] method into an integer but it can't.
+
 ## Conclusion
 
 There are many other errors that can occur in Ruby, this just covered the most common errors encountered when beginning to code in Ruby. Ruby errors are pretty descriptive and there to help out so always see if the error is offering you a hint about your code.
