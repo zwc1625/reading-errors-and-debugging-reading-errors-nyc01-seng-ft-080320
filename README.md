@@ -143,10 +143,6 @@ TypeError: no implicit conversion of String into Integer
 
 Ruby is telling you that it is trying to convert the string you passed as the index to the [] method into an integer but it can't.
 
-## ZeroDivision
-
-Don't divide numbers by 0, it's unpossible.
-
 ## Conclusion
 
 There are many other errors that can occur in Ruby, this just covered the most common errors encountered when beginning to code in Ruby. Ruby errors are pretty descriptive and there to help out so always see if the error is offering you a hint about your code.
