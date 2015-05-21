@@ -81,7 +81,7 @@ NoMethodError: undefined method `reverse' for nil:NilClass
 
 ## Argument Errors
 
-Argument errors occur when methods are passed too few or too many arguments. For instance, let's say you have a simple method, called `calculate_interest_over_first_year`, which takes the value of a loan and find the amount of interest that accumumlates over the loan's first year given that the annual interest rate is 5.25%:
+Argument errors occur when methods are passed too few or too many arguments. For instance, let's say you have a simple method, called `calculate_interest_over_first_year`, which takes the value of a loan and finds the amount of interest that accumulates over the loan's first year given that the annual interest rate is 5.25%:
 
 ```ruby
 def calculate_interest(loan_amount)
