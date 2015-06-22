@@ -5,7 +5,34 @@ So far, we've been introduced to some common errors and learned up to read and u
 This is meant to be a resource for you to refer back to as you start building more complex programs and having to debug them. **There are a few important take-aways from this and the previous two lessons:**
 
 * Don't be afraid of broken programs! It's easy to get frustrated when your program breaks. The tendency of a lot of beginners is to jump right back into the code when a test fails or an error comes up as a consequence of running a program, *without reading the error messages*. Error messages are there to guide you. They contain important information about the location and type of problem you are encountering. Embrace them and get comfortable reading them––don't run away from them. 
-* Pay attention to the helpful part of error messages. Check out the line number and the type of error that you're receiving. This will point you in the right direction. 
+* Pay attention to the helpful part of error messages. Check out the line number and the type of error that you're receiving. This will point you in the right direction. Let's take a look at an example from an earlier lab. 
+
+```ruby
+Failures:
+
+  1) Not having any errors and being all green ZeroDivisionError raises a ZeroDivisionError for dividing by zero
+     Failure/Error: expect{
+       expected no Exception, got #<TypeError: nil can't be coerced into Fixnum> with backtrace:
+         # ./lib/a_division_by_zero_error.rb:3:in `/'
+         # ./lib/a_division_by_zero_error.rb:3:in `<top (required)>'
+         # ./spec/no_ruby_errors_spec.rb:30:in `load'
+         # ./spec/no_ruby_errors_spec.rb:30:in `block (4 levels) in <top (required)>'
+         # ./spec/no_ruby_errors_spec.rb:29:in `block (3 levels) in <top (required)>'
+     # ./spec/no_ruby_errors_spec.rb:29:in `block (3 levels) in <top (required)>'
+```
+This is some of the output we recieved after running out test suite with the `learn` or `rspec` command on this lab. There is a lot going on there! BUT––we know what to look for now. 
+
+We pay attention to the texit right after the `Failure/Error:`. 
+
+It reads: `expect{ expected no Exception, got #<TypeError: nil can't be coerced into Fixnum>` 
+
+Now we know we are dealing with a TypeError and that *something* in our program is `nil`. But what? Well, let's take a look at the next line: 
+
+` # ./lib/a_division_by_zero_error.rb:3:in `/'`
+
+That is telling us that our error is likely originating on line 3 of this file, `lib/a_division_by_zero_error`. 
+
+The rest of the error message is very likely just noise. 
 
 ## Error Types
 
