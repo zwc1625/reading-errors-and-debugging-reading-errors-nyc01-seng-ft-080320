@@ -1,20 +1,48 @@
----
-tags: readme
-language: ruby
-resources: 0
-track: web development
-topic: ruby
-unit: debugging
-lesson: errors
----
-
 # Ruby Errors
 
-## Name Errors
-NameErrors are caused when a given name is invalid or undefined. Whenever the Ruby encounters a word it doesn't recognize, it assumes that word is the name of a variable or a method. If that word was never defined as either a variable or a method, it will result in a name error.
+So far, we've been introduced to some common errors and learned up to read and understand error messages that appear as a consequence of running Ruby programs and test suites. This Readme provides a closer look at some common types of errors. Right now, it may be the case that not all of these error messages make sense or seem meaningful to you. After all, we've only handled a few real programs at this point. 
 
-## Syntax Errors
+This is meant to be a resource for you to refer back to as you start building more complex programs and having to debug them. **There are a few important take-aways from this and the previous two lessons:**
+
+* Don't be afraid of broken programs! It's easy to get frustrated when your program breaks. The tendency of a lot of beginners is to jump right back into the code when a test fails or an error comes up as a consequence of running a program, *without reading the error messages*. Error messages are there to guide you. They contain important information about the location and type of problem you are encountering. Embrace them and get comfortable reading them––don't run away from them. 
+* Pay attention to the helpful part of error messages. Check out the line number and the type of error that you're receiving. This will point you in the right direction. Let's take a look at an example from an earlier lab. 
+
+```ruby
+Failures:
+
+  1) Not having any errors and being all green ZeroDivisionError raises a ZeroDivisionError for dividing by zero
+     Failure/Error: expect{
+       expected no Exception, got #<TypeError: nil can't be coerced into Fixnum> with backtrace:
+         # ./lib/a_division_by_zero_error.rb:3:in `/'
+         # ./lib/a_division_by_zero_error.rb:3:in `<top (required)>'
+         # ./spec/no_ruby_errors_spec.rb:30:in `load'
+         # ./spec/no_ruby_errors_spec.rb:30:in `block (4 levels) in <top (required)>'
+         # ./spec/no_ruby_errors_spec.rb:29:in `block (3 levels) in <top (required)>'
+     # ./spec/no_ruby_errors_spec.rb:29:in `block (3 levels) in <top (required)>'
+```
+
+This is some of the output we recieved after running out test suite with the `learn` or `rspec` command on [this lab](https://github.com/learn-co-curriculum/ruby-lecture-reading-error-messages). There is a lot going on there! BUT––we know what to look for now. 
+
+We pay attention to the texit right after the `Failure/Error:`. 
+
+It reads: `expect{ expected no Exception, got #<TypeError: nil can't be coerced into Fixnum>` 
+
+Now we know we are dealing with a TypeError and that *something* in our program is `nil`. But what? Well, let's take a look at the next line: 
+
+` # ./lib/a_division_by_zero_error.rb:3:in `/'`
+
+That is telling us that our error is likely originating on line 3 of this file, `lib/a_division_by_zero_error`. 
+
+The rest of the error message is very likely just noise. 
+
+## Error Types
+
+### Name Errors
+NameErrors are caused when a given name is invalid or undefined. Whenever the interpreter Ruby encounters a word it doesn't recognize, it assumes that word is the name of a variable or a method. If that word was never defined as either a variable or a method, it will result in a name error.
+
+### Syntax Errors
 Syntax errors are pretty self explanatory and the result of incorrect syntax. Thankfully, they're usually followed by a guess as to the location of the error. For instance:
+
 ```ruby
 2.times do
   puts "hi"
@@ -24,9 +52,9 @@ Will result in:
 ```text
 2: syntax error, unexpected end-of-input, expecting keyword_end
 ```
-Here, Ruby is saying that on line 2, there is a missing `end`. Always read the full details of syntax errors and look for line numbers, which usually appear at the beginning of the error message.
+Here, Ruby is saying that on line 2, there is a missing `end` (every `do` keyword must be followed by some code and then an `end` keyword). Always read the full details of syntax errors and look for line numbers, which usually appear at the beginning of the error message.
 
-## No Method Errors
+### No Method Errors
   Let's say you want to calculate the amount that each coworker owes for a lunch order on Seamless. The order came to $64.25 for you and your three coworkers and you all agreed to split the total evenly so you write:
 
 ```ruby
@@ -63,14 +91,14 @@ price_per_person = total.to_f / num_of_people
 # => 16.0625
 ```
 
-A common error is when you have a nil for a variable when you don't expect it.  This commonly happens when you iterate and one of the elements you pass to a block evaluates to nil and you're calling some method on each element.
+The `NoMethodError` will often occur when you have a varialbe set to `nil` (essentially, nothing or no value), wihtout realizing it. Attemptint to use any method on something that equals `nil` will result in the `NoMethodError`. 
+
+For example: 
 
 ```ruby
-person = {:blake => "cool"}
-person2 = {:steven => "not as cool"}
-[person, person2].each do |item|
-     item[:blake].reverse
-end
+missing_value = nil
+
+missing_value.length
 ```
 
 This will produce the following error
@@ -79,7 +107,7 @@ This will produce the following error
 NoMethodError: undefined method `reverse' for nil:NilClass
 ```
 
-## Argument Errors
+### Argument Errors
 
 Argument errors occur when methods are passed too few or too many arguments. For instance, let's say you have a simple method, called `calculate_interest_over_first_year`, which takes the value of a loan and finds the amount of interest that accumulates over the loan's first year given that the annual interest rate is 5.25%:
 
@@ -116,7 +144,7 @@ puts calculate_interest(9400)
 
 Now that you passed the method a value for loan_amount, it will calculate the first year's interest, $493.50.
 
-## TypeErrors
+### TypeErrors
 
 When you try and do a mathematical operation on two objects of a different type.  For example if you try and add a string and an integer, Ruby will complain.
 
