@@ -20,6 +20,7 @@ Failures:
          # ./spec/no_ruby_errors_spec.rb:29:in `block (3 levels) in <top (required)>'
      # ./spec/no_ruby_errors_spec.rb:29:in `block (3 levels) in <top (required)>'
 ```
+
 This is some of the output we recieved after running out test suite with the `learn` or `rspec` command on this lab. There is a lot going on there! BUT––we know what to look for now. 
 
 We pay attention to the texit right after the `Failure/Error:`. 
