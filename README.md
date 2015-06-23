@@ -104,7 +104,7 @@ missing_value.length
 This will produce the following error
 
 ```ruby
-NoMethodError: undefined method `reverse' for nil:NilClass
+NoMethodError: undefined method `length' for nil:NilClass
 ```
 
 ### Argument Errors
