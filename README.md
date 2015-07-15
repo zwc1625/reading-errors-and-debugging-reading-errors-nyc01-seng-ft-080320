@@ -91,7 +91,7 @@ price_per_person = total.to_f / num_of_people
 # => 16.0625
 ```
 
-The `NoMethodError` will often occur when you have a varialbe set to `nil` (essentially, nothing or no value), wihtout realizing it. Attemptint to use any method on something that equals `nil` will result in the `NoMethodError`. 
+The `NoMethodError` will often occur when you have a varialbe set to `nil` (essentially, nothing or no value), wihtout realizing it. Attempting to use any method on something that equals `nil` will result in the `NoMethodError`. 
 
 For example: 
 
