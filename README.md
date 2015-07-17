@@ -1,5 +1,11 @@
 # Ruby Errors
 
+## Objectives
+
+Understand how to read Ruby error messages and use them to fix programs and build programs.
+
+## Introduction
+
 So far, we've been introduced to some common errors and learned to read and understand error messages that appear as a consequence of running Ruby programs and test suites. This Readme provides a closer look at some common types of errors. Right now, it may be the case that not all of these error messages make sense or seem meaningful to you. After all, we've only handled a few real programs at this point. 
 
 This is meant to be a resource for you to refer back to as you start building more complex programs and having to debug them. **There are a few important take-aways from this and the previous two lessons:**
