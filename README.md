@@ -6,9 +6,9 @@ Understand how to read Ruby error messages and use them to fix programs and buil
 
 ## Introduction
 
-So far, we've been introduced to some common errors and learned to read and understand error messages that appear as a consequence of running Ruby programs and test suites. This Readme provides a closer look at some common types of errors. Right now, it may be the case that not all of these error messages make sense or seem meaningful to you. After all, we've only handled a few real programs at this point. 
+So far, we've been introduced to some common errors and learned to read and understand error messages that appear as a consequence of running Ruby programs and test suites. This lesson provides a closer look at some common types of errors. Right now, it may be the case that not all of these error messages make sense or seem meaningful to you. After all, we've only handled a few real programs at this point. 
 
-This is meant to be a resource for you to refer back to as you start building more complex programs and having to debug them. **There are a few important take-aways from this and the previous two lessons:**
+This is meant to be a resource for you to refer back to as you start building more complex programs and have to debug them. **There are a few important take-aways from this and the previous two lessons:**
 
 1) Don't be afraid of broken programs! It's easy to get frustrated when your program breaks. The tendency of a lot of beginners is to jump right back into the code when a test fails or an error comes up as a consequence of running a program, *without reading the error messages*. Error messages are there to guide you. They contain important information about the location and type of problem you are encountering. Embrace them and get comfortable reading them––don't run away from them.
  
@@ -28,7 +28,7 @@ Failures:
      # ./spec/no_ruby_errors_spec.rb:29:in `block (3 levels) in <top (required)>'
 ```
 
-This is some of the output we recieved after running out test suite with the `learn` or `rspec` command on [this lab](https://github.com/learn-co-curriculum/ruby-lecture-reading-error-messages). There is a lot going on there! BUT––we know what to look for now. 
+This is some of the output we recieved after running our test suite with the `learn` or `rspec` command on [this lab](https://github.com/learn-co-curriculum/ruby-lecture-reading-error-messages). There is a lot going on there! BUT––we know what to look for now. 
 
 We pay attention to the text right after the `Failure/Error:`. 
 
@@ -43,10 +43,10 @@ The rest of the error message is very likely just noise.
 ## Error Types
 
 ### Name Errors
-NameErrors are caused when a given name is invalid or undefined. Whenever the interpreter Ruby encounters a word it doesn't recognize, it assumes that word is the name of a variable or a method. If that word was never defined as either a variable or a method, it will result in a name error.
+NameErrors are caused when a given name is invalid or undefined. Whenever the Ruby interpreter encounters a word it doesn't recognize, it assumes that word is the name of a variable or a method. If that word was never defined as either a variable or a method, it will result in a name error.
 
 ### Syntax Errors
-Syntax errors are pretty self explanatory and the result of incorrect syntax. Thankfully, they're usually followed by a guess about the location of the error. For instance:
+Syntax errors are pretty self explanatory: they're the result of incorrect syntax. Thankfully, they're usually followed by a guess about the location of the error. For instance:
 
 ```ruby
 2.times do
@@ -96,7 +96,7 @@ price_per_person = total.to_f / num_of_people
 # => 16.0625
 ```
 
-The `NoMethodError` will often occur when you have a variable set to `nil` (essentially, nothing or no value), without realizing it. Attempting to use any method on something that equals `nil` will result in the `NoMethodError`. 
+The `NoMethodError` will often occur when you have a variable set to `nil` (essentially, nothing or no value), without realizing it. Most attempts to use a method on something that equals `nil` will result in the `NoMethodError`.  This is because you are asking an object, `nil` in this case, to do something it does not know how to do. In other words, you are calling a method that is not defined for that particular object.
 
 For example: 
 
@@ -137,7 +137,7 @@ What results is:
 1:in `calculate_interest': wrong number of arguments (0 for 1) (ArgumentError)
 ```
 
-This is because you called on the method `calculate_interest` which takes one argument `loan_amount` without passing it a value for `loan_amount`. To call on this method, you must pass it a number. For instance, let's say you're considering taking out a loan of $9,400 to buy a fancy La Marzocco espresso machine for your cafe.
+This is because you called on the method `calculate_interest` which takes one argument, `loan_amount`, without passing it a value for `loan_amount`. To call on this method, you must pass it a number. For instance, let's say you're considering taking out a loan of $9,400 to buy a fancy La Marzocco espresso machine for your cafe.
 
 ```ruby
 def calculate_interest(loan_amount)
@@ -151,12 +151,13 @@ Now that you passed the method a value for loan_amount, it will calculate the fi
 
 ### TypeErrors
 
-When you try and do a mathematical operation on two objects of a different type.  For example if you try and add a string to an integer, Ruby will complain.
+When you try and do a mathematical operation on two objects of a different type, you will recieve a TypeError.  For example if you try and add a string to an integer, Ruby will complain.
 
 ```ruby
 1 + "1"
 ```
-Will produce the following error.
+Will produce the following error:
+
 ```
 TypeError: String can't be coerced into Fixnum
 ```
@@ -169,13 +170,14 @@ array = [1,2,3]
 array[index]
 ```
 
-Will produce the following error.
+Will produce the following error:
+
 ```ruby
 TypeError: no implicit conversion of String into Integer
 ```
 
-Ruby is telling you that it is trying to convert the string you passed as the index to the `[]` method into an integer but it can't.
+Ruby is telling you that it is trying to convert the string you passed as the index to the `[]` method into an integer, but it can't.
 
 ## Conclusion
 
-There are many other errors that can occur in Ruby, this just covered the most common errors encountered when beginning to code in Ruby. Ruby errors are pretty descriptive and are there to help you out so always see if the error is offering you a hint about your code.
+There are many other errors that can occur in Ruby, this just covered the most common errors encountered when beginning to code in Ruby. Ruby errors are pretty descriptive and they are there to help you out, so always see if the error is offering you a hint about your code.
