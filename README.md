@@ -181,3 +181,5 @@ Ruby is telling you that it is trying to convert the string you passed as the in
 ## Conclusion
 
 There are many other errors that can occur in Ruby, this just covered the most common errors encountered when beginning to code in Ruby. Ruby errors are pretty descriptive and they are there to help you out, so always see if the error is offering you a hint about your code.
+
+<a href='https://learn.co/lessons/debugging-errors-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
