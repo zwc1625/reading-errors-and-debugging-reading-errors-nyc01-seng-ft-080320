@@ -147,7 +147,7 @@ end
 puts calculate_interest(9400)
 ```
 
-Now that you passed the method a value for loan_amount, it will calculate the first year's interest, $493.50.
+Now that you passed the method a value for `loan_amount`, it will calculate the first year's interest, $493.50.
 
 ### TypeErrors
 
