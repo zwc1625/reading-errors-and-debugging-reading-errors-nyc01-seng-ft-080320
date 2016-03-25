@@ -28,7 +28,7 @@ Failures:
      # ./spec/no_ruby_errors_spec.rb:29:in `block (3 levels) in <top (required)>'
 ```
 
-This is some of the output we recieved after running our test suite with the `learn` or `rspec` command on [this lab](https://github.com/learn-co-curriculum/ruby-lecture-reading-error-messages). There is a lot going on there! BUT––we know what to look for now. 
+This is some of the output we received after running our test suite with the `learn` or `rspec` command on [this lab](https://github.com/learn-co-curriculum/ruby-lecture-reading-error-messages). There is a lot going on there! BUT––we know what to look for now. 
 
 We pay attention to the text right after the `Failure/Error:`. 
 
@@ -183,3 +183,5 @@ Ruby is telling you that it is trying to convert the string you passed as the in
 There are many other errors that can occur in Ruby, this just covered the most common errors encountered when beginning to code in Ruby. Ruby errors are pretty descriptive and they are there to help you out, so always see if the error is offering you a hint about your code.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/debugging-errors-readme' title='Ruby Errors'>Ruby Errors</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/debugging-errors-readme'>Debugging Errors in your Ruby Code</a> on Learn.co and start learning to code for free.</p>
