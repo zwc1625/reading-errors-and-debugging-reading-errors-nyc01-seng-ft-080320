@@ -6,13 +6,13 @@ Understand how to read Ruby error messages and use them to fix programs and buil
 
 ## Introduction
 
-So far, we've been introduced to some common errors and learned to read and understand error messages that appear as a consequence of running Ruby programs and test suites. This lesson provides a closer look at some common types of errors. Right now, it may be the case that not all of these error messages make sense or seem meaningful to you. After all, we've only handled a few real programs at this point. 
+We've been introduced to some common errors and learned to read and understand error messages that appear. This lesson provides a closer look at some common types of errors. Right now, it may be the case that not all of these error messages make sense or seem meaningful to you. After all, we've only handled a few real programs at this point. 
 
-This is meant to be a resource for you to refer back to as you start building more complex programs and have to debug them. **There are a few important take-aways from this and the previous two lessons:**
+This lesson is meant to be a resource for you to refer back to as you start building more complex programs and have to debug them. **There are a few important take-aways from this and the previous two lessons:**
 
 1) Don't be afraid of broken programs! It's easy to get frustrated when your program breaks. The tendency of a lot of beginners is to jump right back into the code when a test fails or an error comes up as a consequence of running a program, *without reading the error messages*. Error messages are there to guide you. They contain important information about the location and type of problem you are encountering. Embrace them and get comfortable reading them––don't run away from them.
  
-2) Pay attention to the helpful part of error messages. Check out the line number and the type of error that you're receiving. This will point you in the right direction. Let's take a look at an example from an earlier lab. 
+2) Pay attention to the helpful part of error messages. Check out the line number, file name, and the type of error that you're receiving. This will point you in the right direction. Let's take a look at an example from an earlier lab. 
 
 ```bash
 Failures:
@@ -38,14 +38,16 @@ Now we know we are dealing with a TypeError and that *something* in our program 
 
 That is telling us that our error is likely originating on line 3 of this file, `lib/a_division_by_zero_error`. 
 
-The rest of the error message is very likely just noise. 
+The rest of the error message is very likely just noise. Key in on the broken file, which line, and what error.
 
 ## Error Types
 
 ### Name Errors
+
 NameErrors are caused when a given name is invalid or undefined. Whenever the Ruby interpreter encounters a word it doesn't recognize, it assumes that word is the name of a variable or a method. If that word was never defined as either a variable or a method, it will result in a name error.
 
 ### Syntax Errors
+
 Syntax errors are pretty self explanatory: they're the result of incorrect syntax. Thankfully, they're usually followed by a guess about the location of the error. For instance:
 
 ```ruby
@@ -57,10 +59,12 @@ Will result in:
 ```text
 2: syntax error, unexpected end-of-input, expecting keyword_end
 ```
+
 Here, Ruby is saying that on line 2, there is a missing `end` (every `do` keyword must be followed by some code and then an `end` keyword). Always read the full details of syntax errors and look for line numbers, which usually appear at the beginning of the error message.
 
 ### No Method Errors
-  Let's say you want to calculate the amount that each coworker owes for a lunch order on Seamless. The order came to $64.25 for you and your three coworkers and you all agreed to split the total evenly so you write:
+
+Let's say you want to calculate the amount that each coworker owes for a lunch order on Seamless. The order came to $64.25 for you and your three coworkers and you all agreed to split the total evenly so you write:
 
 ```ruby
 total = "64.25"
@@ -181,7 +185,3 @@ Ruby is telling you that it is trying to convert the string you passed as the in
 ## Conclusion
 
 There are many other errors that can occur in Ruby, this just covered the most common errors encountered when beginning to code in Ruby. Ruby errors are pretty descriptive and they are there to help you out, so always see if the error is offering you a hint about your code.
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/debugging-errors-readme' title='Ruby Errors'>Ruby Errors</a> on Learn.co and start learning to code for free.</p>
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/debugging-errors-readme'>Debugging Errors in your Ruby Code</a> on Learn.co and start learning to code for free.</p>
