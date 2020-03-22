@@ -13,16 +13,16 @@ meaningful to you. After all, we've only handled a few code examples at this
 point.
 
 This lesson is meant to be a resource for you to refer back to as you start
-building more complex programs and have to debug them. **There are a few
-important take-aways from this lesson:**
+building more complicated programs and have to debug them. **There are a few
+important takeaways from this lesson:**
 
 1) Don't be afraid of broken programs! It's easy to get frustrated when your
-   program breaks. The tendency of a lot of beginners is to jump right back into
-   the code when a test fails or an error comes up as a consequence of running a
-   program, *without reading the error messages*. Error messages are there to
-   guide you. They contain important information about the location and type of
-   problem you are encountering. Embrace them and get comfortable reading
-   them––don't run away from them.
+   program breaks. A lot of beginners tend to jump right back into the code when
+   a test fails, or an error comes up as a consequence of running a program,
+   *without reading the error messages*. Error messages are there to guide you.
+   They contain important information about the location and type of problem you
+   are encountering. Embrace them and get comfortable reading them––don't run
+   away from them.
 
 2) Pay attention to the helpful part of error messages. Check out the line
    number, file name, and the type of error that you're receiving. This will
@@ -152,7 +152,7 @@ usually appear at the beginning of the error message.
 ### Type Errors
 
 When you try and do a mathematical operation on two objects of a different type,
-you will receive a TypeError.  For example if you try and add a string to an
+you will receive a TypeError. For example, if you try and add a string to an
 integer, Ruby will complain.
 
 ```ruby
@@ -172,8 +172,8 @@ This is the issue we see in `lib/a_type_error.rb`. The culprit is this line:
 ```
 
 One possible solution to this would be to make sure all values being added
-together are the same data type. We can't really convert 
-`"is the loneliest number"` into a number, but we can convert `1` into a string:
+together are the same data type. We can't convert `"is the loneliest number"`
+into a number, but we can convert `1` into a string:
 
 ```rb
 1.to_s + "is the loneliest number"
@@ -206,7 +206,7 @@ future frustration.
 
 Let's say you want to calculate the amount that each coworker owes for a lunch
 order on Seamless. The order came to $64.25 for you and your three coworkers and
-you all agreed to split the total evenly so you write:
+you all agreed to split the total evenly, so you write:
 
 ```ruby
 total = "64.25"
@@ -297,7 +297,7 @@ What results is:
 1:in `calculate_interest': wrong number of arguments (0 for 1) (ArgumentError)
 ```
 
-This is because you called on the method `calculate_interest` which takes one
+This is because you called on the method `calculate_interest`, which takes one
 argument, `loan_amount`, without passing it a value for `loan_amount`. To call
 on this method, you must pass it a number. For instance, let's say you're
 considering taking out a loan of $9,400 to buy a fancy La Marzocco espresso
@@ -316,7 +316,7 @@ first year's interest, $493.50.
 
 ## Conclusion
 
-There are many other errors that can occur in Ruby, this just covered the most
-common errors encountered when beginning to code in Ruby. Ruby errors are pretty
-descriptive and they are there to help you out, so always see if the error is
-offering you a hint about your code.
+Many other errors can occur in Ruby, this just covered the most common errors
+encountered when beginning to code in Ruby. Ruby errors are pretty descriptive
+and they are there to help you out, so always see if the error is offering you a
+hint about your code.
